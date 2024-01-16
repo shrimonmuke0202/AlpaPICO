@@ -1,2 +1,2 @@
 # AlpaPICO
-We will update this repository shortly. Please wait.
+We will update this repository shortly upon acceptance. Please wait.
