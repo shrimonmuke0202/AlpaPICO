@@ -1,8 +1,8 @@
 BASE_MODEL_PATH="meta-llama/Llama-2-7b-hf"
 # CHECK_POINT="models/flant5-xl-ebm_split_new/checkpoint-4200"
 
-TRAIN_PATH="ebm_dataset_demo/train.pkl"
-TEST_PATH="ebm_dataset_demo/validation.pkl"
+TRAIN_PATH="dataset/train.pkl"
+TEST_PATH="dataset/validation.pkl"
 
 
 
