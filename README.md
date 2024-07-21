@@ -8,6 +8,11 @@
  
 ### Datasets
 Dataset is present in the dataset directory
+
+### Models
+Here we take Alpacare model to finetune
+(AlpaCare ) https://huggingface.co/xz97/AlpaCare-llama1-7b
+
 ### Run the following code to train the model
 ```bash
 bash train_instruct.sh
