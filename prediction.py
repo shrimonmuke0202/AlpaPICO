@@ -2,10 +2,8 @@ import pandas as pd
 from metric import calculate_metrics_from_dataframe
 
 prediction = pd.read_json('models_inference.json')
-# prediction.head(3)
 
 ENTITY_TYPES=['OUT','INT','PAR']
-# ENTITY_TYPES=['OUT']
 
 
 metrics = calculate_metrics_from_dataframe(prediction, ENTITY_TYPES)
