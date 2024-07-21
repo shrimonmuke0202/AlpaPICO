@@ -1,5 +1,4 @@
-BASE_MODEL_PATH="meta-llama/Llama-2-7b-hf"
-# CHECK_POINT="models/flant5-xl-ebm_split_new/checkpoint-4200"
+BASE_MODEL_PATH="xz97/AlpaCare-llama1-7b"
 
 TRAIN_PATH="dataset/train.pkl"
 TEST_PATH="dataset/validation.pkl"
@@ -16,4 +15,3 @@ CUDA_VISIBLE_DEVICES=0 python3 train_instruct.py \
     --config_file configs/llama2_7b_lora.json \
     --model_type llama \
     --max_instances 1000 \
-    # --resume_from_checkpoint $CHECK_POINT
