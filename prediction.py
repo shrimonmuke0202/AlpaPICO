@@ -1,6 +1,4 @@
 import pandas as pd
-# from utils.rudrec.rudrec_utis import ENTITY_TYPES
-from metric import calculate_metrics_from_dataframe
 from metric import calculate_metrics_from_dataframe
 
 prediction = pd.read_json('models_inference.json')
