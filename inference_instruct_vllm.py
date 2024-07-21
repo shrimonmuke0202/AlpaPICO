@@ -6,14 +6,14 @@ import pandas as pd
 from tqdm import tqdm
 from transformers import GenerationConfig
 from vllm import LLM, SamplingParams
-from utils.rudrec.rudrec_reader import create_train_test_instruct_datasets
-from utils.nerel_bio.nerel_reader import create_instruct_dataset
+from utils.nerel_reader import create_instruct_dataset
+from utils.nerel_bio_utils import ENTITY_TYPES
 from metric import extract_classes
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset_name", default='rudrec', type=str, help='name of dataset')
+    parser.add_argument("--dataset_name", default='your dataset', type=str, help='name of dataset')
     parser.add_argument("--data_path", default='data/rudrec/rudrec_annotated.json', type=str, help='train file_path')
     parser.add_argument("--model_type", default='llama', type=str, help='model type')
     parser.add_argument("--model_name", default='poteminr/llama2-rudrec-merged', type=str, help='model name from hf')
@@ -40,15 +40,10 @@ if __name__ == "__main__":
         max_tokens=generation_config.max_length
     )
     
-    if arguments.dataset_name == 'rudrec': 
-        from utils.rudrec.rudrec_utis import ENTITY_TYPES
-        _, test_dataset = create_train_test_instruct_datasets(arguments.data_path)
-        if arguments.max_instances != -1 and arguments.max_instances < len(test_dataset):
-            test_dataset = test_dataset[:arguments.max_instances]
-    else:
-        from utils.nerel_bio.nerel_bio_utils import ENTITY_TYPES
-        test_path = os.path.join(arguments.data_path, 'test')
-        test_dataset = create_instruct_dataset(test_path, max_instances=arguments.max_instances)
+    
+   
+    test_path = os.path.join(arguments.data_path, 'test')
+    test_dataset = create_instruct_dataset(test_path, max_instances=arguments.max_instances)
     
     extracted_list = []
     target_list = []
