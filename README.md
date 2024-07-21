@@ -17,4 +17,9 @@ Run the following scrpit to test the best model
 ```python
   python3 inference_instruct_vllm.py
 ```
+### Prediction
+Run the following script and change the input of the prediction.py file with output obtained by running inference code
+```python
+  python3 prediction.py
+```
 
