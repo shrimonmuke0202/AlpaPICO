@@ -8,4 +8,3 @@ CUDA_VISIBLE_DEVICES=0 python3 inference_instruct.py \
     --prediction_path prediction_ebm_comet_AlpaCare_new.json\
     --model_name path of trained model \
     --batch_size 4
-    # --org_model_name meta-llama/Llama-2-7b-hf
