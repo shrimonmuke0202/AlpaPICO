@@ -42,7 +42,7 @@ if __name__ == "__main__":
     peft_config = PeftConfig.from_pretrained(arguments.model_name)
     base_model_name = peft_config.base_model_name_or_path
     
-    hf_auth = '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'
+    hf_auth = 'Your Key'
     
     models = {'llama': AutoModelForCausalLM, 't5': T5ForConditionalGeneration}
     
